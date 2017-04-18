@@ -1,0 +1,11 @@
+@import 'layout';
+
+* {
+  font-family: "Microsoft JhengHei";
+}
+
+.text-wrapper {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
