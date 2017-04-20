@@ -19,8 +19,12 @@ import 'sweetalert/dist/sweetalert.css';
 /////////////////////////////////////////////////////////
 // Modules
 /////////////////////////////////////////////////////////
+import './cart/';
+import './cloth/';
 import './core/';
 import './i18n/';
+import './shopping/';
+import './test/';
 
 /////////////////////////////////////////////////////////
 // SCSS
@@ -37,8 +41,12 @@ import './styles/main.scss';
     'toastr',
     'ui.bootstrap',
     'ui.router',
+    'housegoin.module.cart',
+    'housegoin.module.cloth',
     'housegoin.module.core',
     'housegoin.module.i18n',
+    'housegoin.module.shopping',
+    'housegoin.module.test',
   ];
 
   angular.module(NAME, MODULES)
