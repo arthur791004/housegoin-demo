@@ -1,0 +1,32 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Housegoin Demo</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ng-repeat="menu in $ctrl.menus"
+          ng-class="{active: $ctrl.$state.includes(menu.sref)}"
+          ng-attr-uib-dropdown="{{ $ctrl.hasSubmenus(menu) }}">
+          <a ui-sref="{{ menu.sref }}" ng-if="!$ctrl.hasSubmenus(menu)">
+            <i class="fa fa-fw {{ menu.icon }}"></i>
+            <span translate="{{ menu.name }}"></span>
+          </a>
+          <a uib-dropdown-toggle ng-if="$ctrl.hasSubmenus(menu)">
+            <i class="fa fa-fw {{ menu.icon }}"></i>
+            <span translate="{{ menu.name }}"></span>
+            <span class="caret"></span>
+          </a>
+          <ul uib-dropdown-menu ng-if="$ctrl.hasSubmenus(menu)">
+            <li ng-repeat="submenu in menu.submenus" ui-sref-active="active">
+              <a ui-sref="{{ submenu.sref }}">
+                <i class="fa {{ submenu.icon }}"></i>
+                <span translate="{{ submenu.name }}"></span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
