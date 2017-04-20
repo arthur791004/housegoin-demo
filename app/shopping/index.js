@@ -3,6 +3,7 @@
 import angular from 'angular';
 
 import router from './router';
+import ShoppingComponent from './components/shopping/';
 
 const NAME = 'housegoin.module.shopping';
 const MODULES = [
@@ -10,4 +11,5 @@ const MODULES = [
 ];
 
 angular.module(NAME, MODULES)
-  .config(router);
+  .config(router)
+  .component('shopping', ShoppingComponent);

@@ -4,7 +4,7 @@ export default function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('app.cart', {
       url: '/cart',
-      template: '<div>cart</div>',
+      template: '<cart></cart>',
     });
 
 }

@@ -12,8 +12,10 @@ export default function($translateProvider) {
     MENU_TEST_2: '測試2',
 
     // cart
+    CART_TITLE: '購物車',
 
     // shopping
+    SHOPPING_TITLE: '購物',
 
   });
 }
