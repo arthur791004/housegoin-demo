@@ -1,0 +1,18 @@
+#shopping-list {
+  .shopping-list-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    .shopping-list-item {
+      @extend .flex-col-conainer;
+      flex-basis: 25%;
+      align-items: center;
+      margin: 10px 0;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

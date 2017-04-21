@@ -16,6 +16,9 @@ export default function($translateProvider) {
 
     // shopping
     SHOPPING_TITLE: '購物',
+    SHOPPING_ITEM_NAME: '品名',
+    SHOPPING_ITEM_DESCRIPTION: '描述',
+    SHOPPING_ITEM_RATE: '評價',
 
   });
 }

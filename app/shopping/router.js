@@ -4,7 +4,7 @@ export default function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('app.shopping', {
       url: '/shopping',
-      template: '<shopping></shopping>',
+      template: '<shopping class="flex-col-conainer"></shopping>',
     });
 
 }

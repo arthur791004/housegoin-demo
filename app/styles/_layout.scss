@@ -27,8 +27,17 @@
   flex: 1;
 }
 
+.flex-center {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
 .scroll-y {
   overflow: hidden;
   overflow-y: auto !important;
 }
 
+.border-bottom {
+  border-bottom: 1px solid black;
+}

@@ -1,6 +1,4 @@
-import angular from 'angular';
-
-export default class AppCtrl {
+export default class CartCtrl {
   constructor($state) {
     'ngInject';
 

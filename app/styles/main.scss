@@ -1,7 +1,13 @@
 @import 'layout';
+@import 'shopping';
 
 * {
   font-family: "Microsoft JhengHei";
+}
+
+html, body {
+  @extend .full-height;
+  overflow: hidden;
 }
 
 .text-wrapper {

@@ -1,30 +1,30 @@
 export default class ClothService {
-  constructor() {
+  constructor($q, $timeout) {
     'ngInject';
 
+    this.$q = $q;
+    this.$timeout = $timeout;
   }
 
   getClothes() {
-    return generateClothes(100)
-      .then(clothes => clothes)
-      .catch(err => console.error(err));
+    return this._generateClothes(100);
   }
-}
 
-function generateClothes(num) {
-  return new Promise((resolve, reject) => {
-    const clothes = [];
-    for (let i = 0; i < num; i++) {
-      clothes.push(getCloth());
-    }
+  _generateClothes(num) {
+    return this.$q((resolve, reject) => {
+      const clothes = [];
+      for (let i = 0; i < num; i++) {
+        clothes.push(getCloth());
+      }
 
-    resolve(clothes);
-  });
+      this.$timeout(() => resolve(clothes), 1000);
+    });
+  }
 }
 
 function getCloth() {
   const { group, category, gender, age, sizes } = getMetadata();
-  const imageUrl = `../../images/cloth_0${getRandomInt(4)}`;
+  const imageUrl = `cloth_0${getRandomInt(3) + 1}.jpg`;
   const cloth = {
     name: getRandomString(),
     description: getRandomString(),
