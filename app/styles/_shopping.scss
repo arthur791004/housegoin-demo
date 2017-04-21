@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     list-style-type: none;
     .shopping-list-item {
-      @extend .flex-col-conainer;
+      @extend .flex-col-container;
       flex-basis: 25%;
       align-items: center;
       margin: 10px 0;

@@ -1,3 +1,26 @@
-<div id="cart">
-  <h1 translate="CART_TITLE"></h1>
+<div id="cart" class="flex-col-container">
+  <h1 class="border-bottom" translate="CART_TITLE"></h1>
+  <div id="cart-list">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th style="width: 20%;" translate="CLOTH_NAME"></th>
+          <th style="width: 20%;" translate="CLOTH_DESCRIPTION"></th>
+          <th style="width: 20%;" translate="CLOTH_PRICE"></th>
+          <th style="width: 20%;" translate="CLOTH_SIZE"></th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="cart in $ctrl.carts">
+          <td class="text-wrapper" ng-bind="cart.cloth.name"></td>
+          <td class="text-wrapper" ng-bind="cart.cloth.description"></td>
+          <td ng-bind="cart.cloth.price"></td>
+          <td ng-bind="cart.size"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <footer>
+    <label translate="CART_TOTAL_PRICE"></label>
+    <span ng-bind="$ctrl.getTotalPrice()"></span>
+  </footer>
 </div>

@@ -1,4 +1,4 @@
-<div id="shopping" class="flex-col-conainer">
+<div id="shopping" class="flex-col-container">
   <h1 class="border-bottom" translate="SHOPPING_TITLE"></h1>
   <ul id="shopping-list" class="list-group scroll-y">
     <div class="shopping-list-container"
@@ -6,21 +6,7 @@
       infinite-scroll-distance="0.2"
       infinite-scroll-container="'#shopping-list'">
       <li class="shopping-list-item" ng-repeat="cloth in $ctrl.clothes">
-        <div class="img-container">
-          <img ng-src="{{ $ctrl.loadImage(cloth.imageUrl) }}">
-        </div>
-        <div>
-          <label translate="SHOPPING_ITEM_NAME"></label>
-          <span ng-bind="cloth.name"></span>
-        </div>
-        <div>
-          <label translate="SHOPPING_ITEM_DESCRIPTION"></label>
-          <span ng-bind="cloth.description"></span>
-        </div>
-        <div>
-          <label translate="SHOPPING_ITEM_RATE"></label>
-          <span ng-bind-html="cloth.rate | rateFormat"></span>
-        </div>
+        <cloth-item cloth="cloth" ng-click="$ctrl.openClothViewerModal(cloth)"></cloth-item>
       </li>
     </div>
     <div class="flex-center" ng-if="$ctrl.isLoading">

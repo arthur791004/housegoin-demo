@@ -1,0 +1,9 @@
+#cloth-viewer {
+  .modal-body {
+    .cloth-sizes {
+      button + button {
+        margin: 0 5px;
+      }
+    }
+  }
+}

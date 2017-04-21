@@ -1,0 +1,39 @@
+<div class="cloth-item">
+  <div class="img-container">
+    <img ng-src="{{ $ctrl.loadImage($ctrl.cloth.imageUrl) }}">
+  </div>
+  <div>
+    <label translate="CLOTH_NAME"></label>
+    <span ng-bind="$ctrl.cloth.name"></span>
+  </div>
+  <div>
+    <label translate="CLOTH_DESCRIPTION"></label>
+    <span ng-bind="$ctrl.cloth.description"></span>
+  </div>
+  <div>
+    <label translate="CLOTH_PRICE"></label>
+    <span ng-bind="$ctrl.cloth.price"></span>
+  </div>
+  <div>
+    <label translate="CLOTH_RATE"></label>
+    <span ng-bind-html="$ctrl.cloth.rate | rateFormat"></span>
+  </div>
+  <div ng-if="$ctrl.showClothDetail">
+    <div>
+      <label translate="CLOTH_CATEGORY"></label>
+      <span ng-bind="$ctrl.cloth.category"></span>
+    </div>
+    <div>
+      <label translate="CLOTH_GROUP"></label>
+      <span ng-bind="$ctrl.cloth.group"></span>
+    </div>
+    <div>
+      <label translate="CLOTH_AGE"></label>
+      <span ng-bind="$ctrl.cloth.age"></span>
+    </div>
+    <div>
+      <label translate="CLOTH_GENDER"></label>
+      <span ng-bind="$ctrl.cloth.gender"></span>
+    </div>
+  </div>
+</div>

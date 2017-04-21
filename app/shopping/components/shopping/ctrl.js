@@ -1,8 +1,9 @@
 export default class ShoppingCtrl {
-  constructor($state, ClothService) {
+  constructor($state, $uibModal, ClothService) {
     'ngInject';
 
     this.$state = $state;
+    this.$uibModal = $uibModal;
     this.ClothService = ClothService;
   }
 
@@ -18,8 +19,15 @@ export default class ShoppingCtrl {
     this._getClothes();
   }
 
-  loadImage(name) {
-    return require(`../../../images/${name}`);
+  openClothViewerModal(cloth) {
+    const clothViewerModal = this.$uibModal.open({
+      component: 'clothViewer',
+      resolve: {
+        cloth,
+      },
+      backdrop: 'static',
+      keyboard: false,
+    });
   }
 
   _getClothes() {

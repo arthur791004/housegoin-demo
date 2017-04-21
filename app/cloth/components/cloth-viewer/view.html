@@ -1,0 +1,25 @@
+<div id="cloth-viewer">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$ctrl.close()">&times;</button>
+    <h3 class="modal-title" ng-bind="$ctrl.cloth.name"></h3>
+  </div>
+  <div class="modal-body flex-col-container flex-center">
+    <cloth-item cloth="$ctrl.cloth" show-cloth-detail="true"></cloth-item>
+    <div class="cloth-sizes">
+      <button type="button" class="btn btn-default"
+        ng-class="{ 'btn-info': $ctrl.currentSize === size }"
+        ng-disabled="0 === $ctrl.cloth.inventory[size]"
+        ng-click="$ctrl.currentSize = size"
+        ng-repeat="size in $ctrl.sizes">
+        <span ng-bind="size"></span> (<span ng-bind="$ctrl.cloth.inventory[size]"></span>)
+      </button>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary"
+      translate="CLOTH_ADD_TO_CART"
+      ng-click="$ctrl.addToCart($ctrl.cloth, $ctrl.currentSize)"
+      ng-disabled="!$ctrl.currentSize">
+    </button>
+  </div>
+</div>

@@ -1,11 +1,17 @@
 export default class CartCtrl {
-  constructor($state) {
+  constructor(CartService) {
     'ngInject';
 
-    this.$state = $state;
+    this.CartService = CartService;
   }
 
   $onInit() {
+    this.carts = this.CartService.get();
+  }
 
+  getTotalPrice() {
+    return this.carts
+      .map(cart => cart.cloth.price)
+      .reduce((p1, p2) => p1 + p2);
   }
 }

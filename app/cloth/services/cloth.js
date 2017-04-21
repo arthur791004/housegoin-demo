@@ -10,6 +10,12 @@ export default class ClothService {
     return this._generateClothes(100);
   }
 
+  getSizes() {
+    const metadata = getMetadata();
+
+    return metadata.sizes;
+  }
+
   _generateClothes(num) {
     return this.$q((resolve, reject) => {
       const clothes = [];
