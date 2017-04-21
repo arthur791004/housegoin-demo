@@ -10,6 +10,10 @@ export default class CartCtrl {
   }
 
   getTotalPrice() {
+    if (0 === this.carts.length) {
+      return 0;
+    }
+
     return this.carts
       .map(cart => cart.cloth.price)
       .reduce((p1, p2) => p1 + p2);

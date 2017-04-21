@@ -11,6 +11,11 @@ export default class ShoppingCtrl {
     this.clothes = [];
   }
 
+  sortBy(key) {
+    this.sortBy.reverse = (this.sortBy.key === key) ? !this.sortBy.reverse : false;
+    this.sortBy.key = key;
+  }
+
   loadMore() {
     if (this.isLoading) {
       return;

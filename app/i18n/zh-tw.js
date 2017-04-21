@@ -30,6 +30,7 @@ export default function($translateProvider) {
 
     // shopping
     SHOPPING_TITLE: '購物',
+    SHOPPING_SORT: '排序',
 
   });
 }
